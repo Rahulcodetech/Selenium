@@ -1,11 +1,9 @@
     WebDriver driver=new ChromeDriver();
     
+    driver.manage().window().maximize();
     
-    
-		driver.manage().window().maximize();
-    
-    
-  /-----------------------------------------------------------------------------------------------
+
+/-----------------------------------------------------------------------------------------------
 
     
     driver.get("www.facebook.com/reg");
@@ -15,14 +13,14 @@
 		System.out.println(driver.getCurrentUrl());
 		System.out.println(driver.getPageSource())
  
-  /-----------------------------------------------------------------------------------------------
+ /-----------------------------------------------------------------------------------------------
  
-    driver.navigate().to("www.facebook.com");
+		driver.navigate().to("www.facebook.com");
 		driver.navigate().forward();
 		driver.navigate().back();
 		driver.navigate().refresh();
     
-    WebElement web=driver.findElement(By.name("birthday_day"));
+		WebElement web=driver.findElement(By.name("birthday_day"));
 		System.out.println(driver.findElement(By.name("birthday_day")).isSelected());
 		System.out.println(driver.findElement(By.name("birthday_day")).isEnabled());
 		System.out.println(driver.findElement(By.name("birthday_day")).isDisplayed());
@@ -30,7 +28,7 @@
     driver.quit();
     driver.close();
     
-/-----------------------------------------------------------------------------------------------
+  /-----------------------------------------------------------------------------------------------
     
     List<WebElement> alnk=driver.findElements(By.tagName("a"));
 		
@@ -46,6 +44,17 @@
     
  /-----------------------------------------------------------------------------------------------
  
- 
- 
- 
+		driver.get("https://www.facebook.com/reg");
+		WebElement webE=driver.findElement(By.name("birthday_day"));
+		Select sel=new Select(webE);
+		sel.selectByValue("5");
+		sel.selectByIndex(10);
+		sel.selectByVisibleText("15");
+		
+		List<WebElement> webE1=sel.getOptions();
+		for(int i=0; i<webE1.size(); i++)
+		{
+			System.out.println(webE1.get(i).getText());
+		}
+
+ /-----------------------------------------------------------------------------------------------
