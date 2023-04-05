@@ -1,0 +1,51 @@
+    WebDriver driver=new ChromeDriver();
+    
+    
+    
+		driver.manage().window().maximize();
+    
+    
+  /-----------------------------------------------------------------------------------------------
+
+    
+    driver.get("www.facebook.com/reg");
+		driver.getTitle().contains("Facebook");
+		driver.getTitle().equals("facebook");
+		driver.getTitle().equalsIgnoreCase("facebook");
+		System.out.println(driver.getCurrentUrl());
+		System.out.println(driver.getPageSource())
+ 
+  /-----------------------------------------------------------------------------------------------
+ 
+    driver.navigate().to("www.facebook.com");
+		driver.navigate().forward();
+		driver.navigate().back();
+		driver.navigate().refresh();
+    
+    WebElement web=driver.findElement(By.name("birthday_day"));
+		System.out.println(driver.findElement(By.name("birthday_day")).isSelected());
+		System.out.println(driver.findElement(By.name("birthday_day")).isEnabled());
+		System.out.println(driver.findElement(By.name("birthday_day")).isDisplayed());
+    
+    driver.quit();
+    driver.close();
+    
+/-----------------------------------------------------------------------------------------------
+    
+    List<WebElement> alnk=driver.findElements(By.tagName("a"));
+		
+		for(int i=0; i<alnk.size(); i++)
+		{
+			System.out.println(alnk.get(i).getText());
+		}
+		
+		for(WebElement j:alnk)
+		{
+			System.out.println(j.getText());
+		}
+    
+ /-----------------------------------------------------------------------------------------------
+ 
+ 
+ 
+ 
