@@ -1,0 +1,22 @@
+// Full page scrennshot
+		//Convert webdriver object into TakesSceenshot >> casting
+//		TakesScreenshot ts=(TakesScreenshot)driver;
+		//Take screenshot
+//		File f1 = ts.getScreenshotAs(OutputType.FILE);
+		//Copy to desired location
+//		FileUtils.copyFile(f1, new File("C:\\Users\\Desktop\\f1.png"));
+//		System.out.println("Screenshot is captured");
+		
+  public class Pr1{
+  public static void main(String[] args) throws InterruptedException, IOException 
+  {
+	WebDriver driver=new ChromeDriver();
+	driver.get("https://www.amazon.in");
+	TakesScreenshot tkscrn=(TakesScreenshot) driver;
+	File f1=tkscrn.getScreenshotAs(OutputType.FILE);
+	FileUtils.copyFile(f1, new File("C:\\Users\\Desktop\\f1.png"));	
+	} 
+        
+ 		File tkscr=((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(tkscr, new File(".//Screenshot/screen.png"));
+		driver.quit();
