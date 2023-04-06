@@ -1,4 +1,4 @@
-    WebDriver driver=new ChromeDriver();
+		WebDriver driver=new ChromeDriver();
 		
 		driver.get("https://www.redbus.in");
 		
@@ -10,11 +10,21 @@
 		String monthyear=driver.findElement(By.xpath("//td[@class='monthTitle']")).getText();
 		String month=monthyear.split(" ")[0].trim();
 		String year=monthyear.split(" ")[1].trim();
-		
 		System.out.println(monthyear);
 		System.out.println(month);
 		System.out.println(year);
 		
+		while(!(month.equals("Jun") && year.equals("2024")))
+		{
+			driver.findElement(By.xpath("//td[@class='next']")).click();
+			String monthyearv=driver.findElement(By.xpath("//td[@class='monthTitle']")).getText();
+			System.out.println(monthyearv);
+			month=monthyearv.split(" ")[0].trim();
+		 	year=monthyearv.split(" ")[1].trim();
+		 }
+		
+		driver.findElement(By.xpath("//td[text()='21']")).click();
+		
 		Thread.sleep(3000);
 		driver.quit();
-		
+/-----------------------------------------------------------------------------------------------
