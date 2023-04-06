@@ -63,3 +63,13 @@
 		}
 
  /-----------------------------------------------------------------------------------------------
+ 
+ 	WebElement frame1=driver.findElement(By.name("birthday_day"));
+	WebElement frame2=driver.findElement(By.xpath("//input[@class='frame']"));
+	WebElement frame3=driver.findElement(By.id(10));
+		
+	Alert alt=driver.switchTo().alert();
+	alt.getText();
+		
+	driver.switchTo().defaultContent();
+	driver.switchTo().parentFrame();
