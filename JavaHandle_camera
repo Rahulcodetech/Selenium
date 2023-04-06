@@ -6,6 +6,9 @@
 		//Copy to desired location
 //		FileUtils.copyFile(f1, new File("C:\\Users\\Desktop\\f1.png"));
 //		System.out.println("Screenshot is captured");
+
+
+
 		
   public class Pr1{
   public static void main(String[] args) throws InterruptedException, IOException 
@@ -17,6 +20,6 @@
 	FileUtils.copyFile(f1, new File("C:\\Users\\Desktop\\f1.png"));	
 	} 
         
- 		File tkscr=((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(tkscr, new File(".//Screenshot/screen.png"));
-		driver.quit();
+File tkscr=((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+FileUtils.copyFile(tkscr, new File(".//Screenshot/screen.png"));
+driver.quit();
