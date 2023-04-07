@@ -1,34 +1,39 @@
 
-    WebDriver driver=new ChromeDriver();
-		driver.get("https://www.redbus.in");
-		System.out.println(driver.getCurrentUrl());
-		driver.findElement(By.xpath("//span[@class='offer-code gtm-offer-code']")).click();
-//		System.out.println(driver.getTitle());
-		driver.findElement(By.xpath("//a[@class='apple icon-iPhone_download']")).click();
-//		System.out.println(driver.getTitle());
-
-		Set<String> handles=driver.getWindowHandles();
-		List<String> hlist=new ArrayList<String>(handles);
-			
-		if (switchWindow("Book Bus Travels, AC Volvo Bus, rPool & Bus Hire - redBus India", hlist))
-		{
-			System.out.println(driver.getCurrentUrl()+" : "+driver.getTitle());
-		}
+    	WebDriver driver=new ChromeDriver();
+	driver.get("https://www.redbus.in");
+	String parentWindow=driver.getWindowHandle();
+	System.out.println(driver.getCurrentUrl());
+	System.out.println(driver.getTitle());
 		
-		Thread.sleep(4000);
-		driver.close();
-	  }
+	driver.findElement(By.xpath("//span[@class='offer-code gtm-offer-code']")).click();
+	driver.findElement(By.xpath("//a[@class='apple icon-iPhone_download']")).click();
+
+	Set<String> handles=driver.getWindowHandles();
+	List<String> hlist=new ArrayList(handles);
+		
+	switchparent(parentWindow);
+		
+	if(switchwindow("Volvo",hlist))
+	{
+		System.out.println(driver.getCurrentUrl()+" : "+driver.getTitle());
+	}
+		
+	}
+	public static void switchparent (String parentWindow)
+	{
+		driver.switchTo().window(parentWindow);
+	}
 	
-	  public static boolean switchWindow(String windowTitle, List<String> hlist){
-		for(String e:hlist)
-		{
-		 String title=driver.switchTo().window(e).getTitle();
-		 if(title.contains(windowTitle))
-		{
-		System.out.println("found the right window...");
+	public static boolean switchwindow(String windowTitle, List<String> hlist){
+	for(String e:hlist)
+	{
+	String title=driver.switchTo().window(e).getTitle();
+	if(title.contains(windowTitle))
+	{
+		System.out.println("found right window..");
 		return true;
-			 }
-		  }
-		return false;
-	  }
- 
+	}
+	}
+	return false;
+	}
+}
