@@ -1,8 +1,123 @@
-Microsoft Edge  ->  
-FireFox         ->  Gecko Driver
-Safari          ->  WebKit
-Chrome          ->  
-Opera           ->  
+What is Selenium?
+-------------------
+	-Selenium is suite of tool mainly used to automate the web based application only.
+	-It is an open source tool mainly used for functional and regression testing
+
+There are different tools available in market to automate the web based application
+	UFT/QTP
+	Selenium
+	TOSCA
+	Protractor >> JS
+	RTF
+	RPA
+	Silk test
+	Cypress
+
+Can we automate desktop application by using Selenium?
+->WE CAN NOT AUOTOMATE desktop application by using Selenium
+
+If we want to automate the desktop application by using Selenium, then we have to add AutoIT tool 
+dependacies , then we can automate.
+
+-----------------------------
+Suite of tools:
+	1.Selenium IDE(Integrated Developement Environment)
+	2.Selemuin RC(Remote Control)
+	3.Selenium WebDriver
+	4.Selenium Grid
+
+Selenium Support different types of Operating System
+	1.Windows OS
+	2.Linux OS
+	3.MAC OS
+
+Selenium Support different types of browsers
+	1.chrome
+	2.Edge
+	3.Firefox
+	4.Safari
+	5.Opera
+	6.Internet Explorer
+	7.HTML Unit browser
+
+Which is fastest browser in Selenium web driver?
+	-HTML Unit browser
+
+====================================================================================
+Why there is need of automation?
+=>When we want to perfprm same task with multiple time 
+=>we have to perform same task again and again repetative task 
+
+-----------------------------------------------------------------------------------
+what are the operation we can perform on browser?
+	-Open a browser
+	-Search the content
+	-Navigate to Specific URL
+	-Navigate from one URL to another URL
+	-Open a new tab
+	-title of the webpage
+	-Capture the URL of current page
+	-Navigate froward/backward
+	-refresh the browser
+	-maximize/minimize the browser
+	-Close the current tab
+	-Close the all tabs
+---------------------------------------------------------------------------------------
+Selenium support for diffrent types of programming languages
+- Java >> 
+- Python >> less
+- Ruby
+- C#
+- Java Script >>
+- Perl
+- PHP 
+	
+
+IMP : pom.xml >> this is the heart of maven project
+----------------------------------------------
+<dependencies> 
+	 <dependency>
+		<groupId>junit</groupId>
+      		<artifactId>junit</artifactId>
+      		<version>3.8.1</version>
+      		<scope>test</scope>
+         </dependency>
+	 <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+	<dependency>
+   	 <groupId>org.seleniumhq.selenium</groupId>
+    	<artifactId>selenium-java</artifactId>
+    	<version>3.141.59</version>
+	</dependency>
+
+</dependencies>
+=====================================================================================================================================
+package seleniumBasics;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class launchBrowser {
+	public static void main(String[] args) {
+		// this is used to open browser
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\hp\\Downloads\\chromedriver(1).exe");
+		WebDriver obj =new ChromeDriver();
+		obj.get("https://www.google.com/");
+	}
+}
+----------------------------------------------------------------------------------------------------------------------------------
+package seleniumBasics;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class launchBrowser {
+	public static void main(String[] args) {
+		// this is used to open browser
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\hp\\Downloads\\chromedriver(1).exe");
+		WebDriver obj =new ChromeDriver();
+		obj.get("https://www.facebook.com/");
+	}
+}
+------------------------------------------------------------------------------------------------------------------------------------
 
 System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
 System.setProperty("webdriver.gecko.driver","E:\\GekoDriver\\geckodriver-v0.15.0-win64\\geckodriver.exe");
@@ -50,4 +165,3 @@ Wait PageLoadTimeout , ImplicitylyWait , Fluent Wait , Explicitly Wait
 	driver.selectByVisibleText();
 	driver.selectByValue();
 	driver.selectByIndex();
-
