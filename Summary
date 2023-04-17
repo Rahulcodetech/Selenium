@@ -1,0 +1,53 @@
+Microsoft Edge  ->  
+FireFox         ->  Gecko Driver
+Safari          ->  WebKit
+Chrome          ->  
+Opera           ->  
+
+System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
+System.setProperty("webdriver.gecko.driver","E:\\GekoDriver\\geckodriver-v0.15.0-win64\\geckodriver.exe");
+System.setProperty("webdriver.edge.driver","C:\Users\ghs6kor\Desktop\Java\msedgedriver.exe");
+System.setProperty("webdriver.safari.driver","C:\Users\ghs6kor\Desktop\Java\msedgedriver.exe");
+System.setProperty("webdriver.opera.driver","C:\Users\ghs6kor\Desktop\Java\msedgedriver.exe");
+
+WebDriver driver=new ChromeDriver();
+WebDriver driver=new FirefoxDriver();
+WebDriver driver = new EdgeDriver();
+WebDriver driver = new SafariDriver();
+WebDriver driver = new OperaDriver();  
+
+driver().mamage().window().maximize();
+Wait PageLoadTimeout , ImplicitylyWait , Fluent Wait , Explicitly Wait 
+
+  driver.getCurrentUrl();
+	driver.getTitle();
+
+	driver.contains();
+	driver.equalsIgnoreCase();
+	driver.equals();
+	driver.PageSource();
+	
+	driver.quit();
+	driver.close();
+	
+	driver.navigate().back();
+	driver.navigate().forward();
+	driver.navigate().refresh();
+	driver.navigate().to();
+	
+
+	throws InterruptedException;
+	thread.sleep(3000);
+
+	driver.isDisplayed();
+	driver.isEnabled();
+	driver.isSelected();
+	driver.clear();
+	driver.click();
+	driver.SendKeys();
+	driver.getAttribute();
+	driver.getText();
+	driver.selectByVisibleText();
+	driver.selectByValue();
+	driver.selectByIndex();
+
