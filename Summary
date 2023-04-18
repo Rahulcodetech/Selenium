@@ -71,10 +71,71 @@ Selenium support for diffrent types of programming languages
 - Java Script >>
 - Perl
 - PHP 
-	
+
+
+WebDriver : Interface
+driver/obj/obj1 : ObjectName or refrence variable or instance Name
+new : predefined word availble in java
+ChromeDriver: is a class available in selenium
+
+===============================================================================================================
+WebDriver API commands or Methods
+----------------------------------------------------------------------------------------------------------------
+What are the different types WebDriver methods
+================================================================================================================
+What are the different types of locators in selenium WebDriver
+------------------------
+1.id
+2.name
+3.className
+4.cssSelector
+5.xpath
+6.linkText
+7.partialLinkText
+8.tagName
+
+
+//		by name
+//		driver.findElement(By.name("signin")).click();
+		
+//		By className 
+		
+		
+//		by TagName 
+//		driver.findElement(By.tagName(null)).click();
+//		
+//		CssSelector
+//		driver.findElement(By.cssSelector("#login-signin")).click();
+		
+		
+//		link text 
+//		driver.findElement(By.linkText("Forgot username?")).click();
+		
+		//Partial link Text
+//		driver.findElement(By.partialLinkText("Create an")).click();
+
+
+
+
+Return Type is By class
+===============================================================================================================
+
+WebDriver Interface Methods
+
+1.findElement() Method
+	-It will find the element or object within the current page by using given locator
+	-This method is present inside the WebDriver Interface
+	-Return type of this method is WebElement interface
+Syntax:
+	driverObject.findElement(By.locatorName("value of that locator")).click();
+
+	WebElement abc= driverObject.findElement(By.locatorName("value of that locator"));
+	abc.click();
+
+
 
 IMP : pom.xml >> this is the heart of maven project
-----------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
 <dependencies> 
 	 <dependency>
 		<groupId>junit</groupId>
@@ -134,7 +195,7 @@ WebDriver driver = new OperaDriver();
 driver().mamage().window().maximize();
 Wait PageLoadTimeout , ImplicitylyWait , Fluent Wait , Explicitly Wait 
 
-  driver.getCurrentUrl();
+  	driver.getCurrentUrl();
 	driver.getTitle();
 
 	driver.contains();
