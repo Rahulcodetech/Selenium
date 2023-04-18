@@ -17,10 +17,20 @@
 	System.out.println(driver.findElement(By.name("birthday_day")).isSelected());
 	System.out.println(driver.findElement(By.name("birthday_day")).isEnabled());
 	System.out.println(driver.findElement(By.name("birthday_day")).isDisplayed());
-    
+	
+	driver.get("https://www.facebook.com/reg");
+	WebElement WebE=driver.findElement(By.xpath("//label[text()='Female']"));
+	WebE.click();
+	System.out.println(WebE.isSelected());
+	System.out.println(WebE.isEnabled());
+	System.out.println(WebE.isDisplayed());
+		
+/-----------------------------------------------------------------------------------------------
+
     	driver.quit();
 	driver.close();
- /-----------------------------------------------------------------------------------------------
+	
+/-----------------------------------------------------------------------------------------------
     
     List<WebElement> alnk=driver.findElements(By.tagName("a"));
     
@@ -34,6 +44,22 @@
 		System.out.println(j.getText());
 	}
 	
+	
+	upper bound and lower bound 
+	
+	List<WebElement> WebE=driver.findElements(By.tagName("a"));
+		System.out.println(WebE.size());
+		
+		
+		for(int i=0; i<=WebE.size(); i++)
+		{
+			System.out.println(WebE.get(i).getText());
+		}
+		
+		for(WebElement e:WebE)
+		{
+			System.out.println(e.getText());
+		}
 /-----------------------------------------------------------------------------------------------
  
 	driver.get("https://www.facebook.com/reg");
@@ -47,12 +73,43 @@
 	sel.selectByValue("5");
 	sel.selectByIndex(10);
 	sel.selectByVisibleText("15");
+/-----------------------------------------------------------------------------------------------
+	
+	WebElement list=driver.findElement(By.xpath("//select[@name='birthday_day']"));
+		Select sel=new Select(list);
+		sel.selectByIndex(1);
+		System.out.println(list.getAttribute("value"));
+		sel.selectByValue("13");
+		sel.selectByVisibleText("14");
+/-----------------------------------------------------------------------------------------------
 
 	List<WebElement> webE1=sel.getOptions();
 	for(WebElement j:webE1)
 	{
 		System.out.println(j.getText());
 	}
+
+/-----------------------------------------------------------------------------------------------
+	
+	static WebDriver driver;
+	public static void birthday(WebElement day, String value) {
+			
+		Select sel1=new Select(day);
+		sel1.selectByVisibleText(value);
+	}
+		
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+		
+		
+		driver.get("https://www.facebook.com/reg");
+		WebElement day=driver.findElement(By.xpath("//select[@name='birthday_day']"));
+
+		birthday(day, "18");
 /-----------------------------------------------------------------------------------------------
  
  	WebElement frame1=driver.findElement(By.name("birthday_day"));
