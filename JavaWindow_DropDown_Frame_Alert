@@ -73,6 +73,7 @@
 	sel.selectByValue("5");
 	sel.selectByIndex(10);
 	sel.selectByVisibleText("15");
+	sel.getFirstSelectedOption();
 /-----------------------------------------------------------------------------------------------
 	
 	WebElement list=driver.findElement(By.xpath("//select[@name='birthday_day']"));
