@@ -124,3 +124,6 @@
 		
 	driver.switchTo().defaultContent();
 	driver.switchTo().parentFrame();
+	alt.accept();
+	alt.dismiss();
+
