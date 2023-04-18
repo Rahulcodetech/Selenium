@@ -1,3 +1,23 @@
+
+Web Element 
+	Id				        driver.findElement(By.id()).click();	
+	Link				      driver.findElement(By.link()).click();
+	Partial Link			driver.findElement(By.partiallink()).click();
+	Name				      driver.findElement(By.name()).click();
+	Tag Name			    driver.findElement(By.tagename()).click();
+	Class Name			  driver.findElement(By.className()).click();
+	CSS Selector			driver.findElement(By.cssSelector()).click();
+	xPath				      driver.finfElement(By.xPath()).clcick();
+	Absolute xPath 		//tagName[@Attribute='Value']
+	Relative xPath		//tagName[@Attribute='Value']
+	Start With 
+	    Static xPath		  //tagName[Start-with(@Attribute,'value')]
+	    Dynamic xPath		  //tagName[Contains(@Attribute,'value')]
+	Text Method			  //tagName[text()='Actualtext']
+	And  & Or 			  //tagName[@Attribute='value' and @Attribute='value']
+	        				  //tagName[@Attribute='value' or @Attribute='value']
+	Parent self Child
+
 Some Good Examples:
 
 
