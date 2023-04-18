@@ -24,7 +24,9 @@
 	System.out.println(WebE.isSelected());
 	System.out.println(WebE.isEnabled());
 	System.out.println(WebE.isDisplayed());
-		
+	
+	getSelectedFirstOption() method is available inside the Select Class
+	
 /-----------------------------------------------------------------------------------------------
 
     	driver.quit();
