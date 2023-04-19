@@ -93,26 +93,32 @@
 	}
 
 /-----------------------------------------------------------------------------------------------
-	
+	//Generic Script
 	static WebDriver driver;
-	public static void birthday(WebElement day, String value) {
-			
-		Select sel1=new Select(day);
-		sel1.selectByVisibleText(value);
+	public static void birth_day(WebElement weB,WebElement weB1,WebElement weB2,  
+							String value, String value1, String value2) {
+		Select sel=new Select(weB);
+		sel.selectByVisibleText(value);
+		Select sel1=new Select(weB1);
+		sel1.selectByVisibleText(value1);
+		
+		Select sel2=new Select(weB2);
+		sel2.selectByVisibleText(value2);
 	}
+	
+public static void main (String[] args){
+	
+	WebDriver driver=new ChromeDriver();
+	driver.get("https://www.facebook.com/reg");
+	WebElement weB=driver.findElement(By.name("birthday_day"));
+	WebElement weB1=driver.findElement(By.name("birthday_month"));
+	WebElement weB2=driver.findElement(By.name("birthday_year"));
+	
+	birth_day(weB,weB1,weB2, "14", "Apr", "1986");
 		
-	public static void main(String[] args) throws InterruptedException {
-		// TODO Auto-generated method stub
-		
-		WebDriver driver=new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-		
-		
-		driver.get("https://www.facebook.com/reg");
-		WebElement day=driver.findElement(By.xpath("//select[@name='birthday_day']"));
+	}
+}
 
-		birthday(day, "18");
 /-----------------------------------------------------------------------------------------------
  
  	WebElement frame1=driver.findElement(By.name("birthday_day"));
