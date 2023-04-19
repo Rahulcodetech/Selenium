@@ -8,16 +8,15 @@ Web Element
 	Class Name			  driver.findElement(By.className()).click();
 	CSS Selector			driver.findElement(By.cssSelector()).click();
 	xPath				      driver.finfElement(By.xPath()).clcick();
-	Absolute xPath 		//tagName[@Attribute='Value']
-	Relative xPath		//tagName[@Attribute='Value']
+	Absolute xPath 			  //tagName[@Attribute='Value']
+	Relative xPath			  //tagName[@Attribute='Value']
 	Start With 
-	    Static xPath		  //tagName[Start-with(@Attribute,'value')]
-	    Dynamic xPath		  //tagName[Contains(@Attribute,'value')]
-	Text Method			  //tagName[text()='Actualtext']
-	And  & Or 			  //tagName[@Attribute='value' and @Attribute='value']
-	        				  //tagName[@Attribute='value' or @Attribute='value']
+	    Static xPath		  //tagName[Start-with(@Attribute,'value')]		//input[@name='firstname']
+	    Dynamic xPath		  //tagName[Contains(@Attribute,'value')]       	//input[contains(@name,'firstname')]
+	Text Method			  //tagName[text()='Actualtext']			//a[text()='Already have an account?'] 	//button[text()='Sign Up']	
+	And  & Or 			  //tagName[@Attribute='value' and @Attribute='value']  //input[@class='phone-no' and @name='username']
+	        			  //tagName[@Attribute='value' or @Attribute='value']	//input[@class='phone-no' or @name='username']
 	Parent self Child
-	
 	index method 		//input[type='text'][2] 2 is index posotion for the locator 
 	
 
@@ -70,19 +69,12 @@ driver.findElement(By.linkText("Forgot your password?")).click();
 Thread.sleep(1000);//
 
 driver.findElement(By.xpath("//input[@placeholder='Name']")).sendKeys("John");
-
 driver.findElement(By.cssSelector("input[placeholder='Email']")).sendKeys("john@rsa.com");
-
 driver.findElement(By.xpath("//input[@type='text'][2]")).clear();
-
 driver.findElement(By.cssSelector("input[type='text']:nth-child(3)")).sendKeys("john@gmail.com");
-
 driver.findElement(By.xpath("//form/input[3]")).sendKeys("9864353253");
-
 driver.findElement(By.cssSelector(".reset-pwd-btn")).click();
-
 System.out.println(driver.findElement(By.cssSelector("form p")).getText());
-
 driver.findElement(By.xpath("//div[@class='forgot-pwd-btn-conainer']/button[1]")).click();
 
 Thread.sleep(1000);
