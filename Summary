@@ -74,6 +74,12 @@ Selenium support for diffrent types of programming languages
 
 
 WebDriver : Interface
+
+Every browser has its has common method which has one interface by webdriver 
+ Webdriver is interface 
+All class method defined in WebDriver 
+Webdriver implementing all method where as individual driver implement it won induvial method. 
+ e.g Firefox has close window same method can not close the chrome browser where as webdriver ensure common method is used for all browser hence
 driver/obj/obj1 : ObjectName or refrence variable or instance Name
 new : predefined word availble in java
 ChromeDriver: is a class available in selenium
