@@ -7,6 +7,21 @@ Web Element
 	Tag Name			    driver.findElement(By.tagename()).click();
 	Class Name			  driver.findElement(By.className()).click();
 	CSS Selector			driver.findElement(By.cssSelector()).click();
+						id-> htmltag#id , #id
+						class htmltag.classname , .classname
+						htmltag.c1.c2.c3
+						parent>childtag
+						htmltag[id='value'] 
+						htmltag[id='value][type='text'] two attribute
+						contains input[id*='name'] 
+						dynamic id input[id*=type_]
+						ending with text inout[id$='type']
+						ul#categories>li:last-of-type
+						ul#categories>li:first-of-type
+						ul#categories>li:nth-of-type(1)
+						ul#categories>li:nth-of-type(n) -- all 
+						sibling + operator 
+						
 	xPath				      driver.finfElement(By.xPath()).clcick();
 	Absolute xPath 			  //tagName[@Attribute='Value']
 	Relative xPath			  //tagName[@Attribute='Value']
