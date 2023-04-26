@@ -232,3 +232,22 @@ Wait PageLoadTimeout , ImplicitylyWait , Fluent Wait , Explicitly Wait
 	driver.selectByVisibleText();
 	driver.selectByValue();
 	driver.selectByIndex();
+	
+	
+	System.setProperty("webDriver.chrome.driver", "//c//path");
+	WebDriver driver=new ChromeDriver();
+	driver.manage().window().maximize();
+	
+	driver.manage().window().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+	driver.manage().window().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	
+	WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
+	wait.until(ExpectedCondtions.visibilityOfAllElementsBy(By.name(""));
+	
+	FluentWait<WebDriver> fwait=FluentWait<WebDriver>(driver)
+	.withTimeout(Duration.ofSeconds(10))
+	.pollingEvery(Duration.ofSeconds(1))
+	.ignoring(NoSuchElementException.class);
+	
+	driver.quit();
+	driver.close();
